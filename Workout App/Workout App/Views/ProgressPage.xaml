@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Workout_App.Views.ProgressPage"
+             Title="Progress Tracking">
+    <StackLayout>
+        <Label Text="Progress Charts/Graphs Here" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+        <ListView ItemsSource="{Binding ProgressData}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="{Binding WorkoutDetails}" />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!--DatePicker MinimumDate="2023-01-01" MaximumDate="{x:Static sys:DateTime.Now}" Date="{Binding StartDate}" />
+        <DatePicker MinimumDate="2023-01-01" MaximumDate="{x:Static sys:DateTime.Now}" Date="{Binding EndDate}" /-->
+    </StackLayout>
+</ContentPage>

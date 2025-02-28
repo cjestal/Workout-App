@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Workout_App.Views.WorkoutLogPage"
+             Title="Log Workout">
+    <StackLayout>
+        <Entry Placeholder="Exercise Name" Text="{Binding ExerciseName}" />
+        <Entry Placeholder="Sets" Keyboard="Numeric" Text="{Binding Sets}" />
+        <Entry Placeholder="Reps" Keyboard="Numeric" Text="{Binding Reps}" />
+        <Entry Placeholder="Weight Lifted" Keyboard="Numeric" Text="{Binding WeightLifted}" />
+        <DatePicker Date="{Binding Date}" />
+        <TimePicker Time="{Binding Time}" />
+        <Editor Placeholder="Notes" Text="{Binding Notes}" />
+
+        <Button Text="Add Photo" Command="{Binding AddPhotoCommand}" />
+
+        <Button Text="Save Workout" Command="{Binding SaveWorkoutCommand}" />
+    </StackLayout>
+</ContentPage>
