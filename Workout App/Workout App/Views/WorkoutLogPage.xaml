@@ -2,9 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Workout_App.Views.WorkoutLogPage"
-             Title="Log Workout">
-    <StackLayout>
-        <Entry Placeholder="Exercise Name" Text="{Binding ExerciseName}" />
+             Title="Log Workout"
+             BackgroundColor="#1A1A1A"
+             >
+    <StackLayout Padding="20" BackgroundColor="White">
+        <!--<Entry Placeholder="Exercise Name" Text="{Binding ExerciseName}" />-->
+        <Picker Title="Select Exercise" ItemsSource="{Binding ExerciseNames}" SelectedItem="{Binding SelectedExerciseName}" />
         <Entry Placeholder="Sets" Keyboard="Numeric" Text="{Binding Sets}" />
         <Entry Placeholder="Reps" Keyboard="Numeric" Text="{Binding Reps}" />
         <Entry Placeholder="Weight Lifted" Keyboard="Numeric" Text="{Binding WeightLifted}" />

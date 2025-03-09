@@ -2,8 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Workout_App.Views.SettingsPage"
-             Title="Settings">
-    <StackLayout>
+             Title="Settings"
+             BackgroundColor="#1A1A1A"
+             >
+    <StackLayout Padding="20">
         <Entry Placeholder="Name" Text="{Binding UserName}" />
         <Entry Placeholder="Email" Keyboard="Email" Text="{Binding Email}" />
         <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password}" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ namespace Workout_App.ViewModels
     public class WorkoutLogViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+        public ObservableCollection<string> ExerciseNames { get; set; } = new ObservableCollection<string>();
+
 
         private Workout _workout;
         public Workout Workout
@@ -24,6 +27,17 @@ namespace Workout_App.ViewModels
             }
         }
 
+        private string _selectedExerciseName;
+        public string SelectedExerciseName
+        {
+            get => _selectedExerciseName;
+            set
+            {
+                _selectedExerciseName = value;
+                OnPropertyChanged(nameof(SelectedExerciseName));
+            }
+        }
+
         public ICommand SaveWorkoutCommand { get; }
         public ICommand AddPhotoCommand { get; }
 
@@ -31,7 +45,7 @@ namespace Workout_App.ViewModels
         {
             Workout = workout ?? new Workout();
             SaveWorkoutCommand = new Command(async () => await SaveWorkout());
-            AddPhotoCommand = new Command(async () => await AddPhoto());
+            LoadExerciseNames();
         }
 
         private async Task SaveWorkout()
@@ -40,13 +54,32 @@ namespace Workout_App.ViewModels
             await Application.Current.MainPage.Navigation.PopAsync();
         }
 
-        private async Task AddPhoto()
+
+        private void LoadExerciseNames()
         {
-            // Implement photo picking logic here (using Xamarin.Essentials or a plugin)
-            // Example Placeholder:
-            // string photoPath = await MediaPicker.CapturePhotoAsync();
-            // Workout.ImagePath = photoPath;
+            ExerciseNames.Clear();
+            // TODO fetch from db
+            //var exercises = App.Database.GetExercises();
+            //foreach (var exercise in exercises)
+            //{
+            //    ExerciseNames.Add(exercise.Name);
+            //}
+
+            ExerciseNames.Add("Push-ups");
+            ExerciseNames.Add("Sit-ups");
+            ExerciseNames.Add("Crunches");
+
         }
+
+        private void LoadSelectedExerciseName(int exerciseId)
+        {
+            var exercise = App.Database.GetExercise(exerciseId);
+            if (exercise != null)
+            {
+                SelectedExerciseName = exercise.Name;
+            }
+        }
+
 
         protected virtual void OnPropertyChanged(string propertyName)
         {

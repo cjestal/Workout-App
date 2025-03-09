@@ -16,6 +16,5 @@ namespace Workout_App.Models
         public DateTime Date { get; set; }
         public TimeSpan Time { get; set; }
         public string Notes { get; set; }
-        public string ImagePath { get; set; } // Add ImagePath field
     }
 }

@@ -2,20 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Workout_App.Views.ExerciseLibraryPage"
-             Title="Exercise Library">
+             Title="Exercise Library"
+             BackgroundColor="#1A1A1A"
+             >
     <StackLayout>
         <ListView ItemsSource="{Binding Exercises}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Image Source="{Binding Image}" WidthRequest="50" HeightRequest="50" Grid.Column="0" />
-                            <Label Text="{Binding Name}" Grid.Column="1" />
-                        </Grid>
+                        <StackLayout Orientation="Horizontal"  Margin="0,10">
+                            <Image Source="{Binding Image}" WidthRequest="80" HeightRequest="50" />
+                            <!--<Image Source="{Binding Thumbnail}" WidthRequest="80" HeightRequest="50" />-->
+                            <Label Text="{Binding Name}" TextColor="White" VerticalOptions="Center" />
+                            <Label Text="(" TextColor="White" VerticalOptions="Center" />
+                            <Label Text="{Binding Target}" TextColor="White" VerticalOptions="Center" />
+                            <Label Text=")" TextColor="White" VerticalOptions="Center" />
+                        </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

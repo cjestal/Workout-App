@@ -11,18 +11,13 @@ using Xamarin.Forms.Xaml;
 namespace Workout_App.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class WorkoutLogPage : ContentPage
+    public partial class ExerciseDetailPage : ContentPage
     {
-        //public WorkoutLogPage(Workout workout = null)
-        //{
-        //    InitializeComponent();
-        //    BindingContext = new WorkoutLogViewModel(workout);
-        //}
-
-        public WorkoutLogPage()
+        
+        public ExerciseDetailPage(Exercise exercise = null)
         {
             InitializeComponent();
-            BindingContext = new WorkoutLogViewModel();
+            BindingContext = new ExerciseDetailPageViewModel(exercise);
         }
     }
 }
