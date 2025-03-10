@@ -15,7 +15,7 @@
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
                 <Setter Property="Shell.BackgroundColor" Value="Black" />
-                <Setter Property="Shell.ForegroundColor" Value="BLack" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
                 <Setter Property="Shell.TitleColor" Value="White" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
@@ -34,9 +34,9 @@
         <!--ShellContent Title="About" Icon="icon_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
         <ShellContent Title="Browse" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ItemsPage}" /-->
         <ShellContent Title="Dashboard" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:DashboardPage}" />
-        <ShellContent Title="Progress" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ProgressPage}" />
-        <ShellContent Title="Settings" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:SettingsPage}" />
-        <ShellContent Title="Workout Log" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:WorkoutLogPage}" />
+        <ShellContent Title="Progress" Icon="icon_about.png" ContentTemplate="{DataTemplate local:ProgressPage}" />
+        <!--<ShellContent Title="Settings" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:SettingsPage}" />-->
+        <ShellContent Title="Workout Log" Icon="xamarin_logo.png" ContentTemplate="{DataTemplate local:WorkoutLogPage}" />
         <ShellContent Title="Library" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ExerciseLibraryPage}" />
     </TabBar>
 

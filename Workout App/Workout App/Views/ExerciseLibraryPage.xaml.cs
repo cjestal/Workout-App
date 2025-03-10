@@ -17,5 +17,11 @@ namespace Workout_App.Views
             InitializeComponent();
             BindingContext = new ExerciseLibraryViewModel(); // Instantiate ViewModel
         }
+
+
+        private async void OnShowModalButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new ExerciseDetailPage());
+        }
     }
 }

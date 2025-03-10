@@ -3,15 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Workout_App.Views.SettingsPage"
              Title="Settings"
-             BackgroundColor="#1A1A1A"
              >
     <StackLayout Padding="20">
         <Entry Placeholder="Name" Text="{Binding UserName}" />
         <Entry Placeholder="Email" Keyboard="Email" Text="{Binding Email}" />
         <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password}" />
 
-        <Button Text="Save Changes" Command="{Binding SaveChangesCommand}" />
-        <Button Text="Support" Command="{Binding SupportCommand}" />
-        <Button Text="Terms of Service" Command="{Binding TermsOfServiceCommand}" />
+        <Button Text="Save Changes" Command="{Binding SaveChangesCommand}"  BackgroundColor="DarkRed"/>
     </StackLayout>
 </ContentPage>

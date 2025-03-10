@@ -19,5 +19,9 @@ namespace Workout_App.Views
             InitializeComponent();
             BindingContext = new ExerciseDetailPageViewModel(exercise);
         }
+        private async void OnCloseButtonClicked(object sender, System.EventArgs e)
+        {
+            await Navigation.PopModalAsync();
+        }
     }
 }

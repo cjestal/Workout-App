@@ -5,18 +5,33 @@
              Title="Log Workout"
              BackgroundColor="#1A1A1A"
              >
-    <StackLayout Padding="20" BackgroundColor="White">
-        <!--<Entry Placeholder="Exercise Name" Text="{Binding ExerciseName}" />-->
-        <Picker Title="Select Exercise" ItemsSource="{Binding ExerciseNames}" SelectedItem="{Binding SelectedExerciseName}" />
-        <Entry Placeholder="Sets" Keyboard="Numeric" Text="{Binding Sets}" />
-        <Entry Placeholder="Reps" Keyboard="Numeric" Text="{Binding Reps}" />
-        <Entry Placeholder="Weight Lifted" Keyboard="Numeric" Text="{Binding WeightLifted}" />
-        <DatePicker Date="{Binding Date}" />
-        <TimePicker Time="{Binding Time}" />
-        <Editor Placeholder="Notes" Text="{Binding Notes}" />
+    <ScrollView>
+        <StackLayout Padding="10" BackgroundColor="White">
+            <StackLayout Padding="10" >
+                <Picker Title="Select Exercise" ItemsSource="{Binding ExerciseNames}" SelectedItem="{Binding SelectedExerciseName}" />
+                <Entry Placeholder="Sets" Keyboard="Numeric" Text="{Binding Sets}" />
+                <Entry Placeholder="Reps" Keyboard="Numeric" Text="{Binding Reps}" />
+                <Entry Placeholder="Weight Lifted" Keyboard="Numeric" Text="{Binding WeightLifted}" />
+                <Editor Placeholder="Notes" Text="{Binding Notes}" />
+            </StackLayout>
 
-        <Button Text="Add Photo" Command="{Binding AddPhotoCommand}" />
+            <StackLayout Padding="10" >
+                <Picker Title="Select Exercise" ItemsSource="{Binding ExerciseNames}" SelectedItem="{Binding SelectedExerciseName}" />
+                <Entry Placeholder="Sets" Keyboard="Numeric" Text="{Binding Sets}" />
+                <Entry Placeholder="Reps" Keyboard="Numeric" Text="{Binding Reps}" />
+                <Entry Placeholder="Weight Lifted" Keyboard="Numeric" Text="{Binding WeightLifted}" />
+                <Editor Placeholder="Notes" Text="{Binding Notes}" />
+            </StackLayout>
 
-        <Button Text="Save Workout" Command="{Binding SaveWorkoutCommand}" />
-    </StackLayout>
+            <StackLayout Padding="10" >
+                <Picker Title="Select Exercise" ItemsSource="{Binding ExerciseNames}" SelectedItem="{Binding SelectedExerciseName}" />
+                <Entry Placeholder="Sets" Keyboard="Numeric" Text="{Binding Sets}" />
+                <Entry Placeholder="Reps" Keyboard="Numeric" Text="{Binding Reps}" />
+                <Entry Placeholder="Weight Lifted" Keyboard="Numeric" Text="{Binding WeightLifted}" />
+                <Editor Placeholder="Notes" Text="{Binding Notes}" />
+            </StackLayout>
+
+            <Button Text="Save Workout" Command="{Binding SaveWorkoutCommand}" BackgroundColor="DarkRed" />
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

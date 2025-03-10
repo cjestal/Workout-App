@@ -5,6 +5,9 @@
              Title="Exercise Library"
              BackgroundColor="#1A1A1A"
              >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add Item" Order="Primary" Priority="0" Clicked="OnShowModalButtonClicked" />
+    </ContentPage.ToolbarItems>
     <StackLayout>
         <ListView ItemsSource="{Binding Exercises}">
             <ListView.ItemTemplate>

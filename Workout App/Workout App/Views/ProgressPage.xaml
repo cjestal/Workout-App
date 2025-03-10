@@ -5,20 +5,51 @@
              Title="Progress Tracking"
              BackgroundColor="#1A1A1A"
              >
-    <StackLayout>
-        <Label Text="Progress Charts/Graphs Here" HorizontalOptions="Center" VerticalOptions="Center"/>
 
-        <ListView ItemsSource="{Binding ProgressData}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Label Text="{Binding WorkoutDetails}" />
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+    <ListView ItemsSource="{Binding ProgressData}" HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Padding="10">
+                        <Label Text="{Binding Date}" FontSize="Medium" FontAttributes="Bold" TextColor="White" />
 
-        <!--DatePicker MinimumDate="2023-01-01" MaximumDate="{x:Static sys:DateTime.Now}" Date="{Binding StartDate}" />
-        <DatePicker MinimumDate="2023-01-01" MaximumDate="{x:Static sys:DateTime.Now}" Date="{Binding EndDate}" /-->
-    </StackLayout>
+                        <ListView ItemsSource="{Binding Workouts}" HasUnevenRows="True" SeparatorVisibility="None">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Frame Padding="15" Margin="5" CornerRadius="5" BackgroundColor="#333333">
+                                            <StackLayout>
+                                                <Label Text="{Binding WorkoutName}" FontAttributes="Bold" TextColor="White" />
+
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <Label Grid.Column="0" Text="Reps:" FontAttributes="Bold" TextColor="White" />
+                                                    <Label Grid.Column="1" Text="{Binding Reps}" TextColor="White" />
+                                                    <Label Grid.Column="2" Text="Sets:" FontAttributes="Bold" TextColor="White" />
+                                                    <Label Grid.Column="3" Text="{Binding Sets}" TextColor="White" />
+
+                                                    <Label Grid.Row="1" Grid.Column="0" Text="Weight:" FontAttributes="Bold" TextColor="White" />
+                                                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding Weight}" TextColor="White" />
+                                                    <Label Grid.Row="1" Grid.Column="2" Text="Notes:" FontAttributes="Bold" TextColor="White" />
+                                                    <Label Grid.Row="1" Grid.Column="3" Text="{Binding Notes}" TextColor="White" />
+                                                </Grid>
+                                            </StackLayout>
+                                        </Frame>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+
 </ContentPage>
