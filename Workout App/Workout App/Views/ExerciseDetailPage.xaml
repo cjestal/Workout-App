@@ -4,9 +4,11 @@
              x:Class="Workout_App.Views.ExerciseDetailPage"
              >
     <StackLayout Padding="20">
-        <Label Text="This is my Modal!" FontSize="Large" HorizontalOptions="CenterAndExpand" />
+        <Label Text="Create Exercise" FontSize="Large" />
+        <Entry Placeholder="Name" Keyboard="Numeric" />
+        <Picker Title="Select Target" ItemsSource="{Binding TargetNames}" SelectedItem="{Binding SelectedTargetName}" />
         <Button Text="Save" Clicked="OnCloseButtonClicked" Background="DarkRed" />
-        <Button Text="Close" Clicked="OnCloseButtonClicked" Background="DarkRed" />
+        <Button Text="Close" Clicked="OnCloseButtonClicked" Background="white" TextColor="black" />
     </StackLayout>
 </ContentPage>
     

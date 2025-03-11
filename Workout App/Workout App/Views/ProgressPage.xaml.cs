@@ -34,7 +34,8 @@ namespace Workout_App.Views
                     Workouts = new List<Workout>
                     {
                         new Workout { WorkoutName = "Bench Press", Reps = 8, Sets = 3, Weight = "150 lbs", Notes = "Good form" },
-                        new Workout { WorkoutName = "Incline Press", Reps = 10, Sets = 3, Weight = "100 lbs", Notes = "Felt it in upper chest" }
+                        new Workout { WorkoutName = "Incline Press", Reps = 10, Sets = 3, Weight = "100 lbs", Notes = "Felt it in upper chest" },
+                        new Workout { WorkoutName = "Squats", Reps = 10, Sets = 4, Weight = "200 lbs", Notes = "Deep squats" }
                     }
                 },
                 new ProgressItem
@@ -43,7 +44,8 @@ namespace Workout_App.Views
                     Workouts = new List<Workout>
                     {
                         new Workout { WorkoutName = "Squats", Reps = 10, Sets = 4, Weight = "200 lbs", Notes = "Deep squats" },
-                        new Workout { WorkoutName = "Deadlifts", Reps = 5, Sets = 2, Weight = "250 lbs", Notes = "Heavy day" }
+                        new Workout { WorkoutName = "Deadlifts", Reps = 5, Sets = 2, Weight = "250 lbs", Notes = "Heavy day" },
+                        new Workout { WorkoutName = "Rows", Reps = 12, Sets = 3, Weight = "120 lbs", Notes = "Good back day" }
                     }
                 },
                 new ProgressItem

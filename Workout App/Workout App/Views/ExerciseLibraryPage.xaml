@@ -15,7 +15,6 @@
                     <ViewCell>
                         <StackLayout Orientation="Horizontal"  Margin="0,10">
                             <Image Source="{Binding Image}" WidthRequest="80" HeightRequest="50" />
-                            <!--<Image Source="{Binding Thumbnail}" WidthRequest="80" HeightRequest="50" />-->
                             <Label Text="{Binding Name}" TextColor="White" VerticalOptions="Center" />
                             <Label Text="(" TextColor="White" VerticalOptions="Center" />
                             <Label Text="{Binding Target}" TextColor="White" VerticalOptions="Center" />

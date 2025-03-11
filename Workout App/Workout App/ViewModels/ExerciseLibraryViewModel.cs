@@ -12,7 +12,7 @@ namespace Workout_App.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public string Thumbnail = "https://media.istockphoto.com/id/1225549108/vector/run-sport-exercise-vector-icon-illustration.jpg?s=2048x2048&w=is&k=20&c=LEVwLxYiDYhlBzrLuKmqBy3yN3UBQn-4i4yWPWHrOxQ=";
+        public string Thumbnail = "https://cdn-icons-png.freepik.com/256/3867/3867892.png";
         public ObservableCollection<Exercise> Exercises { get; set; } = new ObservableCollection<Exercise>();
         public ICommand AddExerciseCommand { get; }
         public ICommand EditExerciseCommand { get; }
