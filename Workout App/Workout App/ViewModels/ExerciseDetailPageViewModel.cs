@@ -15,8 +15,8 @@ namespace Workout_App.ViewModels
 
         public ObservableCollection<string> TargetNames { get; set; } = new ObservableCollection<string>();
 
-        private Exercise _exercise;
-        public Exercise Exercise
+        private ExerciseDTO _exercise;
+        public ExerciseDTO Exercise
         {
             get => _exercise;
             set
@@ -39,9 +39,9 @@ namespace Workout_App.ViewModels
 
         public ICommand SaveExerciseCommand { get; }
 
-        public ExerciseDetailPageViewModel(Exercise exercise = null)
+        public ExerciseDetailPageViewModel(ExerciseDTO exercise = null)
         {
-            Exercise = exercise ?? new Exercise();
+            Exercise = exercise ?? new ExerciseDTO();
             SaveExerciseCommand = new Command(async () => await SaveExercise());
             LoadTargetNames();
         }

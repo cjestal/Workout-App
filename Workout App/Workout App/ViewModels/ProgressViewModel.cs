@@ -9,7 +9,7 @@ namespace Workout_App.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public ObservableCollection<Workout> ProgressData { get; set; } = new ObservableCollection<Workout>();
+        public ObservableCollection<WorkoutDTO> ProgressData { get; set; } = new ObservableCollection<WorkoutDTO>();
 
         private DateTime _startDate = DateTime.Now.AddDays(-7);
         public DateTime StartDate

@@ -14,7 +14,7 @@ namespace Workout_App.Views
     public partial class ExerciseDetailPage : ContentPage
     {
         
-        public ExerciseDetailPage(Exercise exercise = null)
+        public ExerciseDetailPage(ExerciseDTO exercise = null)
         {
             InitializeComponent();
             BindingContext = new ExerciseDetailPageViewModel(exercise);

@@ -13,22 +13,22 @@ namespace Workout_App.Services
         public DatabaseService(string dbPath)
         {
             _database = new SQLiteConnection(dbPath);
-            _database.CreateTable<Workout>();
-            _database.CreateTable<Exercise>();
+            _database.CreateTable<WorkoutDTO>();
+            _database.CreateTable<ExerciseDTO>();
         }
 
         // Workout CRUD Operations
-        public List<Workout> GetWorkouts()
+        public List<WorkoutDTO> GetWorkouts()
         {
-            return _database.Table<Workout>().ToList();
+            return _database.Table<WorkoutDTO>().ToList();
         }
 
-        public Workout GetWorkout(int id)
+        public WorkoutDTO GetWorkout(int id)
         {
-            return _database.Table<Workout>().Where(i => i.Id == id).FirstOrDefault();
+            return _database.Table<WorkoutDTO>().Where(i => i.Id == id).FirstOrDefault();
         }
 
-        public int SaveWorkout(Workout workout)
+        public int SaveWorkout(WorkoutDTO workout)
         {
             if (workout.Id != 0)
             {
@@ -40,29 +40,29 @@ namespace Workout_App.Services
             }
         }
 
-        public int DeleteWorkout(Workout workout)
+        public int DeleteWorkout(WorkoutDTO workout)
         {
             return _database.Delete(workout);
         }
 
-        public List<Workout> GetWorkoutsByDateRange(DateTime startDate, DateTime endDate)
+        public List<WorkoutDTO> GetWorkoutsByDateRange(DateTime startDate, DateTime endDate)
         {
-            return _database.Table<Workout>().Where(w => w.Date >= startDate && w.Date <= endDate).ToList();
+            return _database.Table<WorkoutDTO>().Where(w => w.Date >= startDate && w.Date <= endDate).ToList();
         }
 
         // Exercise CRUD Operations
 
-        public List<Exercise> GetExercises()
+        public List<ExerciseDTO> GetExercises()
         {
-            return _database.Table<Exercise>().ToList();
+            return _database.Table<ExerciseDTO>().ToList();
         }
 
-        public Exercise GetExercise(int id)
+        public ExerciseDTO GetExercise(int id)
         {
-            return _database.Table<Exercise>().Where(e => e.Id == id).FirstOrDefault();
+            return _database.Table<ExerciseDTO>().Where(e => e.Id == id).FirstOrDefault();
         }
 
-        public int SaveExercise(Exercise exercise)
+        public int SaveExercise(ExerciseDTO exercise)
         {
             if (exercise.Id != 0)
             {
@@ -74,7 +74,7 @@ namespace Workout_App.Services
             }
         }
 
-        public int DeleteExercise(Exercise exercise)
+        public int DeleteExercise(ExerciseDTO exercise)
         {
             return _database.Delete(exercise);
         }
